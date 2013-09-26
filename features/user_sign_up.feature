@@ -11,3 +11,10 @@ Feature: User signs up
 		Then the user count should not go up by one
 		And the current path should be "/users"
 		And the user should see the message "Sorry, your passwords don't match"
+
+	Scenario: with an email that is already registered
+		Given that the user has already signed up
+		When the user tries to sign up again
+		Then the number of users do not increase by one
+		# And the message "This email is already taken" is displayed
+

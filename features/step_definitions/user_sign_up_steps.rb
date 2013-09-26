@@ -39,3 +39,19 @@ def sign_up(email = "alice@example.com",
     fill_in :password_confirmation, :with => password_confirmation
     click_button "Sign up"
 end
+
+Given(/^that the user has already signed up$/) do
+  sign_up
+end
+
+When(/^the user tries to sign up again$/) do
+  sign_up
+end
+
+Then(/^the number of users do not increase by one$/) do
+  expect(User.count > 1).to be_false
+end
+
+Then(/^the message "(.*?)" is displayed$/) do |message|
+  expect(page).to have_content(message)
+end
