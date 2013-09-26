@@ -6,6 +6,7 @@ gem 'data_mapper'
 gem 'dm-postgres-adapter'
 gem 'sinatra'
 gem 'bcrypt-ruby'
+gem 'rack-flash3'
 
 group :development, :test do
 	gem 'shotgun'
@@ -14,4 +15,6 @@ group :development, :test do
 	gem 'capybara'
 	gem 'rspec'
 	gem 'database_cleaner'
+	gem 'guard'
+	gem 'guard-cucumber'
 end

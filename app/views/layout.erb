@@ -6,9 +6,13 @@
 	</head>
 	<body>
 		<div id="container">
+			<% if flash[:notice] %>
+			  <div id="notice"><%= flash[:notice] %></div>
+			<% end %>
+
 			<% if current_user %>
-		    Welcome, <%= current_user.email %>
-		  <% end %>
+			  Welcome, <%= current_user.email %>
+			<% end %>
 			<%= yield %>
 		</div>
 	</body>

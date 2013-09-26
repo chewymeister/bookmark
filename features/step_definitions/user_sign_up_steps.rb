@@ -22,9 +22,17 @@ Then(/^the user count should not go up by one$/) do
   expect(User.count).to eq 0
 end
 
+Then(/^the current path should be "(.*?)"$/) do |path|
+  expect(current_path).to eq(path)
+end
+
+Then(/^the user should see the message "(.*?)"$/) do |message|
+  expect(page).to have_content(message)
+end
+
 def sign_up(email = "alice@example.com", 
-              password = "oranges!", 
-              password_confirmation = 'oranges!')
+            password = "oranges!", 
+            password_confirmation = 'oranges!')
     visit '/users/new'
     fill_in :email, :with => email
     fill_in :password, :with => password

@@ -9,3 +9,5 @@ Feature: User signs up
 	Scenario: with a password that doesn't match
 		When the user signs up with "alice@example.com" and the password "oranges" and confirms with the password "retard"
 		Then the user count should not go up by one
+		And the current path should be "/users"
+		And the user should see the message "Sorry, your passwords don't match"
