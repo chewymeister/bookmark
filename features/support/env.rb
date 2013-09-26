@@ -25,8 +25,8 @@ After do |scenario|
   DatabaseCleaner.clean
 end
 
-Before('@sign_in') do 
-	User.create(:email => "test@test.com", 
+Before('@sign_in_out') do 
+	User.create(:email => "test@test.com",
               :password => 'test', 
               :password_confirmation => 'test')
 end

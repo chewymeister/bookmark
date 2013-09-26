@@ -1,4 +1,4 @@
-@sign_in
+@sign_in_out
 Feature: User sign in
 
 	Scenario: with correct credentials
