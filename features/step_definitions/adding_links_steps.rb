@@ -35,9 +35,9 @@ end
       fill_in 'url', :with => url
       fill_in 'title', :with => title
       # our tags will be space separated
-# ==============================================================     
-# 											CHANGED EVGENY CODE
-# ==============================================================     
+# ==============================================================#    
+# 											CHANGED EVGENY CODE											#
+# ==============================================================#    
       # fill_in 'tags', :with => tags.split(' ')
       fill_in 'tags', :with => tags
       click_button 'Add link'
