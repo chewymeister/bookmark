@@ -1,4 +1,3 @@
-
 Given(/^the user has added a link to "(.*?)" and given it a title "(.*?)"$/) do |url, title|
 	Link.create(:url => "#{url}",:title => "#{title}")
 end
@@ -35,16 +34,4 @@ Then(/^the user will find the title "(.*?)"$/) do |title|
   expect(page).to have_content(title)
 end
 
-Given(/^there is a link "(.*?)" pointing to "(.*?)" with the tag "(.*?)"$/) do |title, url, tag|
-  Link.create(:url => url,
-              :title => title, 
-              :tags => [Tag.first_or_create(:text => tag)])
-end
 
-When(/^the user visits the "(.*?)" page$/) do |urn|
-  visit "/tags/#{urn}"
-end
-
-Then(/^the user should see "(.*?)"$/) do |title|
-  expect(page).to have_content(title)
-end

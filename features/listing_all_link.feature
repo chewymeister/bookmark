@@ -21,17 +21,6 @@ Feature: Listing all links
   And the user will find the title "Google"
   And the user will find the title "Bing"
 
-  Scenario Outline: Tags
-    Given there is a link "<title>" pointing to "<url>" with the tag "<tag>"
-    When the user visits the "<tag>" page
-    Then the user should see "<title>"
-
-    Examples:
-      | url                           | title          | tag       |
-      | http://www.makersacademy.com  | Makers Academy | education |
-      | http://www.google.com         | Google         | search    |
-      | http://www.bing.com           | Bing           | search    |
-      | http://www.code.org           | Code.org       | education |
 
 
 

@@ -1,4 +1,3 @@
-
 Given(/^the user visits the home page for the first time$/) do
 	visit('/')
 end
