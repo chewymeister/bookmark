@@ -3,19 +3,40 @@
 	<head>
 		<meta charset="UTF-8">
 		<title>Welcome to Bookmark Manager</title>
+    <link rel="stylesheet" href="css/application.css">
+    <link rel="stylesheet" href="css/reset.css">
 	</head>
 	<body>
 		<div id="container">
+      
+      <header>
+        <div id="logo">Bookmark Manager</div>
+        <div id="user-links">
+          <% if current_user %>
+            Welcome, <%= current_user.email %>
+            <form method="post" action="/sessions">
+              <input type="hidden" name="_method" value="delete">
+              <input type="submit" value="Sign out">
+            </form>
+          <% else %>
+            What are you waiting for? sign up!
+          <% end %>
+        </div>
+      </header>
+      <div>
+        <form action="/sessions/new" method="get">
+          <button>Sign In</button>
+        </form>
+      </div>
+
+      <div>
+        <form action="/users/new" method="get">
+          <button>Sign Up</button>
+        </form>
+      </div>
+
 			<% if flash[:notice] %>
 			  <div id="notice"><%= flash[:notice] %></div>
-			<% end %>
-
-			<% if current_user %>
-			  Welcome, <%= current_user.email %>
-        <form method="post" action="/sessions">
-          <input type="hidden" name="_method" value="delete">
-          <input type="submit" value="Sign out">
-        </form>
 			<% end %>
 
 			<% if flash[:errors] && !flash[:errors].empty? %>

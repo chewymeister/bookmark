@@ -15,7 +15,7 @@ When(/^the user visits the home page$/) do
 end
 
 Then(/^the user will find a link$/) do
-	expect(has_selector?('a')).to be_true
+	expect(has_selector?('a')).to be_true  
 end
 
 When(/^the user visits the filtered page$/) do

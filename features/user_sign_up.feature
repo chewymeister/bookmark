@@ -16,5 +16,5 @@ Feature: User signs up
 		Given that the user has already signed up
 		When the user tries to sign up again
 		Then the number of users do not increase by one
-		# And the message "This email is already taken" is displayed
+		And the message "This email is already taken" is displayed
 
