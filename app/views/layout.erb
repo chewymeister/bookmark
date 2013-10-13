@@ -3,53 +3,70 @@
 	<head>
 		<meta charset="UTF-8">
 		<title>Welcome to Bookmark Manager</title>
-    <link rel="stylesheet" href="css/application.css">
-    <link rel="stylesheet" href="css/reset.css">
+    <!-- <link rel="stylesheet" href="css/reset.css"> -->
+    <!-- <link rel="stylesheet" href="../../css/reset.css"> -->
+    <!-- <link rel="stylesheet" href="css/application.css"> -->
+    <!-- <link rel="stylesheet" href="../../css/application.css"> -->
+    <link rel="stylesheet" href="/css/reset.css">
+    <link rel="stylesheet" href="/css/application.css">
+    
+    <!-- <link href='http://fonts.googleapis.com/css?family=Lobster' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Lato:100,300' rel='stylesheet' type='text/css'> -->
 	</head>
+
 	<body>
 		<div id="container">
-      
       <header>
-        <div id="logo">Bookmark Manager</div>
+        <div id="logo">
+          <a href="/">Bookmark Manager</a>
+        </div>
         <div id="user-links">
           <% if current_user %>
-            Welcome, <%= current_user.email %>
-            <form method="post" action="/sessions">
-              <input type="hidden" name="_method" value="delete">
-              <input type="submit" value="Sign out">
+
+            <form id="add-link-box" class="button-box" method="get" action="/links/new">
+              <input type="submit" id="add-link-button" class="button" value="Add Link">
             </form>
-          <% else %>
-            What are you waiting for? sign up!
+
+            <form id="sign-out-box" class="button-box" method="post" action="/sessions">
+              <input type="hidden" name="_method" value="delete">
+              <input id="sign-out-button" class="button" type="submit" value="Sign out">
+            </form>
+            <!-- What are you waiting for? sign up! -->
           <% end %>
         </div>
       </header>
-      <div>
-        <form action="/sessions/new" method="get">
-          <button>Sign In</button>
-        </form>
+
+      <div id="content">
+        <% if !current_user %>
+          <div id="sign-in-box" class="button-box" id="sign-in">
+            <form action="/sessions/new" method="get">
+              <button id="sign-in-button" class="button">Sign In</button>
+            </form>
+          </div>
+
+          <div id="sign-up-box" class="button-box" id="sign-up">
+            <form action="/users/new" method="get">
+              <button id="sign-up-button" class="button">Sign Up</button>
+            </form>
+          </div>
+        <% end %>
+
+        <% if flash[:notice] %>
+          <div id="notice"><%= flash[:notice] %></div>
+        <% end %>
+
+        <% if flash[:errors] && !flash[:errors].empty? %>
+          Sorry, there were the following problems with the form.
+          <ul id="errors">
+            <% flash[:errors].each do |error| %>
+              <li><%= error %></li>
+            <% end %>
+          </ul>
+        <% end %>
+
+  			<%= yield %>
+
       </div>
-
-      <div>
-        <form action="/users/new" method="get">
-          <button>Sign Up</button>
-        </form>
-      </div>
-
-			<% if flash[:notice] %>
-			  <div id="notice"><%= flash[:notice] %></div>
-			<% end %>
-
-			<% if flash[:errors] && !flash[:errors].empty? %>
-				Sorry, there were the following problems with the form. 
-				<ul id="errors">
-					<% flash[:errors].each do |error| %>
-						<li><%= error %></li>
-					<% end %>
-				</ul>
-			<% end %>
-
-			<%= yield %>
-
 		</div>
 	</body>
 </html>

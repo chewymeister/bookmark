@@ -1,5 +1,5 @@
 GEM
-  remote: https://rubygems.org/
+  remote: http://rubygems.org/
   specs:
     addressable (2.3.5)
     bcrypt-ruby (3.1.2)
@@ -10,6 +10,8 @@ GEM
       rack (>= 1.0.0)
       rack-test (>= 0.5.4)
       xpath (~> 2.0)
+    celluloid (0.15.2)
+      timers (~> 1.1.0)
     coderay (1.0.9)
     cucumber (1.3.8)
       builder (>= 2.1.2)
@@ -73,29 +75,29 @@ GEM
     fastercsv (1.5.5)
     ffi (1.9.0)
     formatador (0.2.4)
-    gherkin (2.12.1)
+    gherkin (2.12.2)
       multi_json (~> 1.3)
-    guard (1.8.3)
+    guard (2.0.5)
       formatador (>= 0.2.4)
-      listen (~> 1.3)
-      lumberjack (>= 1.0.2)
-      pry (>= 0.9.10)
-      thor (>= 0.14.6)
+      listen (~> 2.0)
+      lumberjack (~> 1.0)
+      pry (>= 0.9.12)
+      thor (>= 0.18.1)
     guard-cucumber (1.4.0)
       cucumber (>= 1.2.0)
       guard (>= 1.1.0)
     highline (1.6.19)
     json (1.8.0)
     json_pure (1.8.0)
-    listen (1.3.1)
+    listen (2.1.0)
+      celluloid (>= 0.15.2)
       rb-fsevent (>= 0.9.3)
       rb-inotify (>= 0.9)
-      rb-kqueue (>= 0.2)
     lumberjack (1.0.4)
     method_source (0.8.2)
     mime-types (1.25)
     mini_portile (0.5.1)
-    multi_json (1.8.0)
+    multi_json (1.8.1)
     multi_test (0.0.2)
     nokogiri (1.6.0)
       mini_portile (~> 0.5.0)
@@ -113,8 +115,8 @@ GEM
     rb-fsevent (0.9.3)
     rb-inotify (0.9.2)
       ffi (>= 0.5.0)
-    rb-kqueue (0.2.0)
-      ffi (>= 0.5.0)
+    rest-client (1.6.7)
+      mime-types (>= 1.16)
     rspec (2.14.1)
       rspec-core (~> 2.14.0)
       rspec-expectations (~> 2.14.0)
@@ -137,6 +139,7 @@ GEM
       highline (>= 1.4.0)
     thor (0.18.1)
     tilt (1.4.1)
+    timers (1.1.0)
     uuidtools (2.1.4)
     xpath (2.0.0)
       nokogiri (~> 1.3)
@@ -155,6 +158,7 @@ DEPENDENCIES
   guard
   guard-cucumber
   rack-flash3
+  rest-client
   rspec
   shotgun
   sinatra

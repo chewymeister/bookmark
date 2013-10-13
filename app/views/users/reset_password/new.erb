@@ -1,0 +1,5 @@
+<form method="post" action="/users/reset_password/<%= params[:token] %>">
+  Password: <input type="text" name='password'>
+  Password Confirmation <input type="text" name='password_confirmation'>
+  <input type="submit" value="Reset Password">
+</form>

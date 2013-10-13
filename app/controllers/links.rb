@@ -1,7 +1,11 @@
 require 'sinatra'
 
 class BookmarkManager < Sinatra::Base
-	post '/links' do
+	get '/links/new' do
+    erb :"links/new"
+  end
+
+  post '/links' do
 	  url = params["url"]
 	  title = params["title"]
 		tags = params["tags"].split(" ").map do |tag|

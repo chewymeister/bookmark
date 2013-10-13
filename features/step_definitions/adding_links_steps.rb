@@ -6,6 +6,10 @@ When(/^the page has no links$/) do
 	expect(Link.count).to eq 0
 end
 
+Then(/^the user clicks the "(.*?)" button$/) do |button|
+  click_button button
+end
+
 Then(/^the user adds a link to "(.*?)" and gives it a title "(.*?)"\.$/) do |url, title|
 	add_link(url, title)
 end

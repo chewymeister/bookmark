@@ -1,4 +1,89 @@
 body{
-  background-image: url('/images/sos.png');
+  background: gray url('/images/sos.png');
+  color: black;
+  height: 1000px;
+}
+
+a{
+  color: white;
+  text-decoration: none;
+}
+
+#logo{
+  height: 50px;
+  width: 100%;
+  background: black;
+  color: white;
+  font-size: 2em;
+  font-family: 'Lobster',cursive;
+  position: fixed;
+  top: 0;
+}
+
+#logo a{
+  margin-top: 10px;
+  margin-left: 10px;
+   display: inline-block;
+}
+
+#content{
+  margin-top: 65px;
+}
+
+.button-box{
+  position: fixed;
+  display: inline-block;
+  top: 0;
+  right: 10px;
+  text-align: right;
+}
+
+.button{
+ border-radius: 0;
+ background: black;
+ color: white;
+ border: none;
+ height: 50px;
+ width: 120px;
+ font-size: 1.2em;
+
+  -webkit-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+
+.button:hover, .button:active, .button:focus{
+  color: black;
+  background: white;
+ 
+  -webkit-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+
+#add-link-box{
+  right: 68%;
+}
+
+#add-link-button:hover{
+  background: black;
+  color: white;
+}
+
+#sign-in-box{
+  right: 130px;
+}
+
+#link-box li{
+ margin-bottom: 5px;
+}
+
+#link-box a{
   color: black;
 }
+
+
+
+

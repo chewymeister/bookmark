@@ -1,0 +1,10 @@
+<% if current_user %>
+  <div id="new-link">
+    <form action="/links" method="post">
+      Url: <input type="text" name="url">
+      Title: <input type="text" name="title">
+      Tags(optional): <input type="text" name="tags">
+      <input type="submit" value="Add link">
+    </form>
+  </div>
+<% end %>

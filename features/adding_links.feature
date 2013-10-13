@@ -8,6 +8,7 @@ Feature: User adds a link
 	Given the user visits the home page for the first time
 	When the page has no links
 	And when the user signs in with the email "test@test.com" and the password "test"
+	Then the user clicks the "Add Link" button
 	Then the user adds a link to "http://google.com" and gives it a title "Google".
 	And the link should go to "http://google.com"
 	And the title should be "Google"
@@ -17,6 +18,7 @@ Feature: User adds a link
 	Given the user visits the home page for the first time
 	When the page has no links
 	And when the user signs in with the email "test@test.com" and the password "test"
+	Then the user clicks the "Add Link" button
 	Then the user adds a link to "http://google.com" and gives it a title "Google" and the tag "search engine"
 	And the link should go to "http://google.com"
 	And the title should be "Google"

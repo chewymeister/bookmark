@@ -28,7 +28,8 @@ end
 Before('@sign_in_out') do 
 	User.create(:email => "test@test.com",
               :password => 'test', 
-              :password_confirmation => 'test')
+              :password_confirmation => 'test',
+              :password_token => 'abcde')
 end
 
 World do
